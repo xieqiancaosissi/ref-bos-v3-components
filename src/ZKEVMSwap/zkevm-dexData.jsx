@@ -9,10 +9,11 @@ const {
   DEX,
   debug,
 } = props;
-console.log("DexData2", DEX);
 
 let onLoad = props.onLoad;
 const forceReload = props.forceReload ?? false;
+
+const { onShowNoPool } = props;
 
 State.init({ loadComplete: false });
 
@@ -24,7 +25,6 @@ if (forceReload) {
     routerAbi: undefined,
   });
 }
-f;
 
 if (state.loadComplete && !forceReload) {
   return <div />;
@@ -131,6 +131,7 @@ const callTxBalancerZKEVM = (input, onComplete, gasPrice, gasLimit) => {
           poolData[0].includes(input.outputAssetTokenId)
       )
       .map((poolData) => poolData[1]);
+    onShowNoPool();
 
     if (!finalPool.length) {
       return console.log("Pool not found");

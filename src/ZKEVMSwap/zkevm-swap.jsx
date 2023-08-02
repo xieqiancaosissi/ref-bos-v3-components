@@ -114,6 +114,7 @@ State.init({
   },
   add: false,
   hasGetStorage: false,
+  noPool: false,
 });
 
 const refReferralId = props.refReferralId ?? "ukraine";
@@ -326,6 +327,12 @@ const canSwap =
   Number(state.inputAssetAmount || 0) > 0 &&
   state.inputAssetTokenId !== state.outputAssetTokenId;
 
+const insufficientBalance =
+  Number(state.inputAsset.balance_hr_full) < Number(state.inputAssetAmount) &&
+  state.inputAssetTokenId !== state.outputAssetTokenId &&
+  state.network &&
+  Number(state.inputAssetAmount || 0) > 0;
+
 const ExchangeWrapper = () => {
   return (
     <div
@@ -357,6 +364,16 @@ const SwapMainContainer = styled.div`
   left: 50%;
   /* top: 50%; */
   transform: translate(-50%);
+
+  .invalid-pool-tip {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ff61d3;
+    padding-bottom: 5px;
+  }
 `;
 
 const NetworkList = styled.div`
@@ -445,7 +462,7 @@ const SwapPage = styled.div`
     background: none;
   }
 
-  height: 451px;
+  min-height: 451px;
   padding: 28px;
   background: linear-gradient(0deg, #181a27, #181a27),
     linear-gradient(0deg, #332c4b, #332c4b);
@@ -506,7 +523,8 @@ const SwapPage = styled.div`
     border-radius: 10px;
     text-align: center;
     color: white;
-    background: #794fdd;
+    background: ${(p) => (p.notEnough ? "#FF61D3" : "#794fdd")};
+    opacity: ${(p) => (p.notEnough ? 0.5 : 1)};
   }
 
   .swap-price-details-rate {
@@ -622,7 +640,12 @@ const networksDropDown = Object.keys(networks).map((chainKey) => {
   console.log("selectedDex: ", selectedDex);
   return (
     <NetWorkItem
-      onClick={() => switchNetwork(Number(network.chainId), network.dex ?? "")}
+      onClick={() => {
+        switchNetwork(Number(network.chainId), network.dex ?? "");
+        State.update({
+          noPool: false,
+        });
+      }}
       onMouseEnter={() => {
         State.update({
           hoverOnChain: chainKey,
@@ -788,6 +811,8 @@ if (!state.sender || selectedChainId !== 1101) {
   );
 }
 
+console.log("state no pool", state.noPool);
+
 return (
   <Theme>
     <Widget
@@ -800,6 +825,7 @@ return (
         forceReload: state.forceReload ?? false,
         DEX: selectedDex,
         sender,
+        onShowNoPool: () => State.update({ noPool: true }),
       }}
     />
 
@@ -817,6 +843,7 @@ return (
               inputAssetModalHidden: true,
               inputAssetTokenId: tokenId,
               approvalNeeded: undefined,
+              noPool: false,
             });
           },
           onClose: () => State.update({ inputAssetModalHidden: true }),
@@ -837,6 +864,7 @@ return (
               outputAssetModalHidden: true,
               outputAssetTokenId: tokenId,
               outputAsset: null,
+              noPool: false,
             });
           },
           onClose: () => State.update({ outputAssetModalHidden: true }),
@@ -964,7 +992,16 @@ return (
                     } ${state.outputAsset.metadata.symbol}`}
               </div>
             </div>
-            <div class="swap-button-container">
+            {state.noPool && state.inputAsset && state.outputAsset && (
+              <div className="invalid-pool-tip">
+                {`No pool available to make a swap from ${state.inputAsset.metadata.symbol}-> ${state.outputAsset.metadata.symbol} for the amount ${state.inputAssetAmount}`}
+              </div>
+            )}
+
+            <div
+              class="swap-button-container"
+              notEnough={insufficientBalance && !state.approvalNeeded}
+            >
               {state.approvalNeeded && (
                 <button
                   class={"swap-button"}
@@ -991,6 +1028,7 @@ return (
                 <button
                   class={"swap-button-enabled"}
                   disabled={!canSwap}
+                  notEnough={insufficientBalance}
                   onClick={() => {
                     if (canSwap) {
                       try {
@@ -1006,7 +1044,9 @@ return (
                     }
                   }}
                 >
-                  <div class="swap-button-text">Swap</div>
+                  <div class="swap-button-text">
+                    {insufficientBalance ? "insufficient Balance" : "Swap"}
+                  </div>
                 </button>
               )}
             </div>
