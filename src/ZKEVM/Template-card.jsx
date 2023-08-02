@@ -80,13 +80,13 @@ const Icon = styled.a`
     }
 
 `
-const { src } = props;
+const { src , bannerImg} = props;
 const [accountId, widget, widgetName] = src.split("/");
 const metadata = Social.get(`${src}/metadata/**`,"final");
 return <Card>
   <Banner href={`/${src}`}>
      {
-      metadata.bannerImage.cid ? <img src={`https://ipfs.near.social/ipfs/${metadata.bannerImage.cid}`}></img> : <div className="replaceImg"></div>
+      bannerImg? <img src={`${bannerImg}`}></img> : <div className="replaceImg"></div>
      }
      
   </Banner>
