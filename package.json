@@ -1,0 +1,32 @@
+{
+  "name": "ref-bos-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bos-loader guessme.near -p src",
+    "deploy-mainnet": "bos components deploy sign-as guessme.near network-config mainnet sign-with-keychain send"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max-mainnet/ref-bos-components.git"
+  },
+  "author": "Max",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/max-mainnet/ref-bos-components/issues"
+  },
+  "homepage": "https://github.com/max-mainnet/ref-bos-components#readme",
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  }
+}
