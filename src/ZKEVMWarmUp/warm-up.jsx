@@ -261,10 +261,7 @@ return (
         Quest Trends{" "}
       </div>
 
-      <a
-        className="view-all"
-        href="/guessme.near/widget/ZKEVM.QuestionList"
-      >
+      <a className="view-all" href="/guessme.near/widget/ZKEVM.QuestionList">
         <span>View All</span>
         {ArrowRight}
       </a>
@@ -285,7 +282,7 @@ return (
         props={{
           background: "linear-gradient(180deg, #8C36D8 0%, #24264C 100%)",
           dappName: "Polygon zkEVM All-in-one",
-          creator: "ref-admin.near",
+          creator: "guessme.near",
           widgetSrc: "guessme.near/widget/ZKEVMSwap.zkevm-swap",
           src: "https://assets.ref.finance/images/zkevm-swap.png",
         }}
@@ -295,7 +292,7 @@ return (
         props={{
           background: "linear-gradient(180deg, #7347DA 0%, #202445 100%)",
           dappName: "ZkEvm-bridge",
-          creator: "ref-admin.near",
+          creator: "guessme.near",
           widgetSrc: "guessme.near/widget/ZKEVMSwap.zkevm-bridge",
           src: "https://assets.ref.finance/images/zkevm-swap.png",
         }}
@@ -306,7 +303,7 @@ return (
         props={{
           background: "linear-gradient(180deg, #895C5C 0%, #343149 100%)",
           dappName: "Gamma",
-          creator: "ref-admin.near",
+          creator: "guessme.near",
           widgetSrc: "guessme.near/widget/ZKEVM.GAMMA",
 
           src: "https://assets.ref.finance/images/zkevm-swap.png",
@@ -318,7 +315,7 @@ return (
         props={{
           background: "linear-gradient(180deg, #4A80A7 0%, #343149 100%)",
           dappName: "AAVE v3",
-          creator: "ref-admin.near",
+          creator: "guessme.near",
           widgetSrc: "guessme.near/widget/ZKEVM.AAVE",
           src: "https://assets.ref.finance/images/zkevm-swap.png",
         }}
