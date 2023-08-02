@@ -281,7 +281,7 @@ return (
         src="guessme.near/widget/ZKEVMWarmUp.hot-dapp-card"
         props={{
           background: "linear-gradient(180deg, #8C36D8 0%, #24264C 100%)",
-          dappName: "Polygon zkEVM All-in-one",
+          dappName: "Polygon zkEVM Dex",
           creator: "guessme.near",
           widgetSrc: "guessme.near/widget/ZKEVMSwap.zkevm-swap",
           src: "https://assets.ref.finance/images/zkevm-swap.png",
