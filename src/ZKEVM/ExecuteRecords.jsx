@@ -1,4 +1,5 @@
 const Container = styled.div`
+  padding-bottom:65px;
   .pageTitle {
     display: flex;
     align-items: center;

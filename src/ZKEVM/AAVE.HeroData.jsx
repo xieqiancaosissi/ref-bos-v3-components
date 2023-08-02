@@ -6,9 +6,9 @@ if (!netWorth || !netApy || !healthFactor) {
 
 const HeroDataContainer = styled.div`
   display: flex;
-  justify-content:space-between;
   flex-grow:1;
-  margin-left:120px;
+  gap:50px;
+  padding-left:20px;
 `;
 
 const KVData = styled.div`
