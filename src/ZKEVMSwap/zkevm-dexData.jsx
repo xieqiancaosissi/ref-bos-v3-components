@@ -131,9 +131,10 @@ const callTxBalancerZKEVM = (input, onComplete, gasPrice, gasLimit) => {
           poolData[0].includes(input.outputAssetTokenId)
       )
       .map((poolData) => poolData[1]);
-    onShowNoPool();
 
     if (!finalPool.length) {
+      onShowNoPool();
+
       return console.log("Pool not found");
     }
 
