@@ -253,7 +253,10 @@ function supplyWithPermit(user, reserve, amount, deadline, rawSig) {
     "supplyWithPermit(address,uint256,address,uint16,uint256,uint8,bytes32,bytes32)"
   ](reserve, amount, user, 0, deadline, sig.v, sig.r, sig.s);
 }
-
+const uuid = Storage.get(
+  "zkevm-warm-up-uuid",
+  "guessme.near/widget/ZKEVMWarmUp.generage-uuid"
+);
 function depositETH(amount) {
   State.update({
     loading: true,
@@ -304,7 +307,7 @@ function depositETH(amount) {
           action_tokens: JSON.stringify([`${symbol}`]),
           action_amount: null,
           account_id: eth_account_id,
-          account_info: "",
+          account_info: uuid,
           template: "AAVE",
           action_switch: questionSwitch == "on" ? '1': '0',
           action_status: status === 1 ? "Success" : "Failed",
@@ -430,7 +433,7 @@ function depositErc20(amount) {
                 action_tokens: JSON.stringify([`${symbol}`]),
                 action_amount: null,
                 account_id: eth_account_id,
-                account_info: "",
+                account_info: uuid,
                 template: "AAVE",
                 action_switch: questionSwitch == "on" ? '1': '0',
                 action_status: status === 1 ? "Success" : "Failed",
@@ -479,7 +482,7 @@ function depositErc20(amount) {
                 action_tokens: JSON.stringify([`${symbol}`]),
                 action_amount: null,
                 account_id: eth_account_id,
-                account_info: "",
+                account_info: uuid,
                 template: "AAVE",
                 action_switch: questionSwitch == "on" ? '1': '0',
                 action_status: status === 1 ? "Success" : "Failed",

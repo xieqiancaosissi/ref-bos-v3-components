@@ -316,9 +316,12 @@ State.init({
   page_size: 20,
 });
 const eth_account_id = Ethers.send("eth_requestAccounts", [])[0];
+const uuid = Storage.get(
+  "zkevm-warm-up-uuid",
+  "guessme.near/widget/ZKEVMWarmUp.generage-uuid"
+);
 function get_my_records_list_by_condition() {
-  // account_info todo
-  const params_str = `account_id=${eth_account_id}&page_number=${state.current_page}&page_size=${state.page_size}&action_type=${state.search_action}&action_status=${state.search_status}&template=${state.search_template}&account_info=`;
+  const params_str = `account_id=${eth_account_id}&page_number=${state.current_page}&page_size=${state.page_size}&action_type=${state.search_action}&action_status=${state.search_status}&template=${state.search_template}&account_info=${uuid}`;
   asyncFetch(
     `https://bos-api.delink.one/get-action-records-by-account?${params_str}`
   ).then((res) => {

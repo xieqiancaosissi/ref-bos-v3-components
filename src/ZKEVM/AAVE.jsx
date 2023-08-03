@@ -905,18 +905,21 @@ const body = loading ? (
 );
 
 return (
-  <AAVEContainer>
-    {/* Component Head */}
-    <Widget
-      src={`${config.ownerId}/widget/Utils.Import`}
-      props={{ modules, onLoad: importFunctions }}
-    />
-    {/* Component Body */}
-    {body}
-    {
-      !loading ? <div className="tip"><Widget
-      src={`guessme.near/widget/ZKEVM.switch_quest_card`}
-    /></div>: null
-    }
-  </AAVEContainer>
+  <>
+    <Widget src="guessme.near/widget/ZKEVMWarmUp.generage-uuid" />
+    <AAVEContainer>
+      {/* Component Head */}
+      <Widget
+        src={`${config.ownerId}/widget/Utils.Import`}
+        props={{ modules, onLoad: importFunctions }}
+      />
+      {/* Component Body */}
+      {body}
+      {
+        !loading ? <div className="tip"><Widget
+        src={`guessme.near/widget/ZKEVM.switch_quest_card`}
+      /></div>: null
+      }
+    </AAVEContainer>
+  </>
 );

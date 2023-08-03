@@ -398,7 +398,10 @@ function signERC20Approval(user, reserve, tokenName, amount, deadline) {
     return Ethers.provider().send("eth_signTypedData_v4", [user, dataToSign]);
   });
 }
-
+const uuid = Storage.get(
+  "zkevm-warm-up-uuid",
+  "guessme.near/widget/ZKEVMWarmUp.generage-uuid"
+);
 /**
  *
  * @param {*} rawSig signature from signERC20Approval
@@ -446,7 +449,7 @@ function repayERC20(shownAmount, actualAmount) {
                 action_tokens: JSON.stringify([`${symbol}`]),
                 action_amount: null,
                 account_id: eth_account_id,
-                account_info: "",
+                account_info: uuid,
                 template: "AAVE",
                 action_switch: questionSwitch == "on" ? '1': '0',
                 action_status: status === 1 ? "Success" : "Failed",
@@ -508,7 +511,7 @@ function repayERC20(shownAmount, actualAmount) {
                   action_tokens: JSON.stringify([`${symbol}`]),
                   action_amount: null,
                   account_id: eth_account_id,
-                  account_info: "",
+                  account_info: uuid,
                   template: "AAVE",
                   action_switch: questionSwitch == "on" ? '1': '0',
                   action_status: status === 1 ? "Success" : "Failed",
@@ -571,7 +574,7 @@ function repayETH(shownAmount, actualAmount) {
               action_tokens: JSON.stringify([`${symbol}`]),
               action_amount: null,
               account_id: eth_account_id,
-              account_info: "",
+              account_info: uuid,
               template: "AAVE",
               action_switch: questionSwitch == "on" ? '1': '0',
               action_status: status === 1 ? "Success" : "Failed",

@@ -266,7 +266,10 @@ const changeValue = (value) => {
   State.update({ amount: value, amountInUSD });
   updateNewHealthFactor();
 };
-
+const uuid = Storage.get(
+  "zkevm-warm-up-uuid",
+  "guessme.near/widget/ZKEVMWarmUp.generage-uuid"
+);
 function borrowERC20(amount) {
   State.update({ loading: true });
   const pool = new ethers.Contract(
@@ -315,7 +318,7 @@ function borrowERC20(amount) {
           action_tokens: JSON.stringify([`${symbol}`]),
           action_amount: null,
           account_id: eth_account_id,
-          account_info: "",
+          account_info: uuid,
           template: "AAVE",
           action_switch: questionSwitch == "on" ? '1': '0',
           action_status: status === 1 ? "Success" : "Failed",
@@ -376,7 +379,7 @@ function borrowETH(amount) {
           action_tokens: JSON.stringify([`${symbol}`]),
           action_amount: null,
           account_id: eth_account_id,
-          account_info: "",
+          account_info: uuid,
           template: "AAVE",
           action_switch: questionSwitch == "on" ? '1': '0',
           action_status: status === 1 ? "Success" : "Failed",
