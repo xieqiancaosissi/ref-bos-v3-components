@@ -523,8 +523,7 @@ const SwapPage = styled.div`
     border-radius: 10px;
     text-align: center;
     color: white;
-    background: ${(p) => (p.notEnough ? "#FF61D3" : "#794fdd")};
-    opacity: ${(p) => (p.notEnough ? 0.5 : 1)};
+    background: #794fdd;
   }
 
   .swap-price-details-rate {
@@ -811,8 +810,6 @@ if (!state.sender || selectedChainId !== 1101) {
   );
 }
 
-console.log("state no pool", state.noPool);
-
 return (
   <Theme>
     <Widget
@@ -1001,6 +998,13 @@ return (
             <div
               class="swap-button-container"
               notEnough={insufficientBalance && !state.approvalNeeded}
+              style={{
+                background:
+                  insufficientBalance && !state.approvalNeeded
+                    ? "#FF61D3"
+                    : "#794fdd",
+                opacity: insufficientBalance && !state.approvalNeeded ? 0.5 : 1,
+              }}
             >
               {state.approvalNeeded && (
                 <button
@@ -1028,7 +1032,6 @@ return (
                 <button
                   class={"swap-button-enabled"}
                   disabled={!canSwap}
-                  notEnough={insufficientBalance}
                   onClick={() => {
                     if (canSwap) {
                       try {

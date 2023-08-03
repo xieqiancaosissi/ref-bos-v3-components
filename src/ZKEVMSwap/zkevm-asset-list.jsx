@@ -39,7 +39,7 @@ const ModalContainer = styled.div`
   padding-bottom: 8px;
   border: 1px solid #332c4b;
 
-  padding: 20px;
+  padding: 20px 30px;
 `;
 
 const ModalBackdrop = styled.div`
