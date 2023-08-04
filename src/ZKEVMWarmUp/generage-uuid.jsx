@@ -19,8 +19,7 @@ const uuid = generateUUID();
 const storeKey = "zkevm-warm-up-uuid";
 
 const uidStore = Storage.get(storeKey);
-
-if (!uidStore) {
+if (!(uidStore == null || uidStore)) {
   Storage.set(storeKey, uuid);
 }
 
