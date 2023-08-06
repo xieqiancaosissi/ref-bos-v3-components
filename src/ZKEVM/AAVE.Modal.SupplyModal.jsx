@@ -647,7 +647,7 @@ return (
                     <Widget
                       src={`${config.ownerId}/widget/AAVE.Modal.FlexBetween`}
                       props={{
-                        left: <PurpleTexture>Supply APY</PurpleTexture>,
+                        left: <WhiteTexture>Supply APY</WhiteTexture>,
                         right: (
                           <WhiteTexture>
                             {(Number(supplyAPY) * 100).toFixed(2)}%
@@ -658,7 +658,7 @@ return (
                     <Widget
                       src={`${config.ownerId}/widget/AAVE.Modal.FlexBetween`}
                       props={{
-                        left: <PurpleTexture>Collateralization</PurpleTexture>,
+                        left: <WhiteTexture>Collateralization</WhiteTexture>,
                         right: usageAsCollateralEnabled ? (
                           <GreenTexture>Enabled</GreenTexture>
                         ) : (
@@ -669,7 +669,7 @@ return (
                     <Widget
                       src={`${config.ownerId}/widget/AAVE.Modal.FlexBetween`}
                       props={{
-                        left: <PurpleTexture>Health Factor</PurpleTexture>,
+                        left: <WhiteTexture>Health Factor</WhiteTexture>,
                         right: (
                           <div style={{ textAlign: "right" }}>
                             <GreenTexture>

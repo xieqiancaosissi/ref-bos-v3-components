@@ -665,7 +665,7 @@ return (
                     <Widget
                       src={`${config.ownerId}/widget/AAVE.Modal.FlexBetween`}
                       props={{
-                        left: <PurpleTexture>Remaining Debt</PurpleTexture>,
+                        left: <WhiteTexture>Remaining Debt</WhiteTexture>,
                         right: (
                           <div style={{ textAlign: "right" }}>
                             <DeepPurpleTexture>
@@ -712,7 +712,7 @@ return (
                     <Widget
                       src={`${config.ownerId}/widget/AAVE.Modal.FlexBetween`}
                       props={{
-                        left: <PurpleTexture>Health Factor</PurpleTexture>,
+                        left: <WhiteTexture>Health Factor</WhiteTexture>,
                         right: (
                           <div style={{ textAlign: "right" }}>
                             <GreenTexture>
