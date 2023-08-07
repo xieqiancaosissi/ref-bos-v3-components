@@ -636,7 +636,7 @@ const networksDropDown = Object.keys(networks).map((chainKey) => {
   let network = networks[chainKey];
 
   const light = selectedDex === network.dex;
-  console.log("selectedDex: ", selectedDex);
+
   return (
     <NetWorkItem
       onClick={() => {
@@ -658,7 +658,7 @@ const networksDropDown = Object.keys(networks).map((chainKey) => {
       key={chainKey}
       style={{
         background: light ? "#794fdd" : "",
-        opacity: light ? 1 : "none",
+        opacity: light ? 1 : "",
       }}
     >
       {network.icon}
