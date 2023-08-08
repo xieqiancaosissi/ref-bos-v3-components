@@ -135,10 +135,18 @@ State.init({
 const { add, onChangeAdd, source, hide } = props;
 
 const onAdd = () => {
+  Storage.set("storeCheckTip", 1);
+  State.update({
+    storeShowTip: false,
+  });
   onChangeAdd(true);
 };
 
 const onCancel = () => {
+  Storage.set("storeCheckTip", 1);
+  State.update({
+    storeShowTip: false,
+  });
   onChangeAdd(false);
 };
 
