@@ -567,16 +567,15 @@ return (
         src="ciocan.near/widget/toast"
         props={{ open: isToastOpen, variant, title, description, onOpenChange }}
       />
+      <Widget
+        src="guessme.near/widget/ZKEVMWarmUp.add-to-quest-card"
+        props={{
+          add: state.add,
+          onChangeAdd: state.onChangeAdd,
+          hide: state.hide,
+          source: props.source,
+        }}
+      />
     </Container>
-
-    <Widget
-      src="guessme.near/widget/ZKEVMWarmUp.add-to-quest-card"
-      props={{
-        add: state.add,
-        onChangeAdd: state.onChangeAdd,
-        hide: state.hide,
-        source: props.source,
-      }}
-    />
   </>
 );

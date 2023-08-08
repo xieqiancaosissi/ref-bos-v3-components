@@ -1,5 +1,5 @@
 const DeskLayout = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 
   /* The scrollbar track */
 `;
@@ -889,7 +889,7 @@ const params_from_question_list = Storage.get(
   "guessme.near/widget/ZKEVM.QuestionList"
 );
 
-if (props.source == 'question_list' && params_from_question_list) {
+if (props.source == "question_list" && params_from_question_list) {
   params = params_from_question_list;
 }
 const storedSymbol = params?.symbol;
