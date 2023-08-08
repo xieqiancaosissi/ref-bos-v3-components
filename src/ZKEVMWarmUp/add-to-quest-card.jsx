@@ -58,6 +58,7 @@ const Layout = styled.div`
   align-items: end;
   position: fixed;
   bottom: -20px;
+  z-index: 1;
   right: 120px;
 
   .tip-wrapper {
