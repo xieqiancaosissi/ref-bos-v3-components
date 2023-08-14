@@ -2,7 +2,7 @@
   "image": {
     "ipfs_cid": "bafkreidhz4xmk2cm2a4xtvdi35yaraqb6a5dqxd6c5bhfakvwlg3ecewbi"
   },
-  "name": "Polygon zkEVM-bridge",
+  "name": "Polygon zkEVM native bridge",
   "tags": {
     "bridge": "",
     "polygon-zkevm": "",
