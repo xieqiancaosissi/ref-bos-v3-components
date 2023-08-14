@@ -406,8 +406,8 @@ if (sender) {
 const networks = {
   1: "Ethereum Mainnet",
   5: "Ethereum Goerli",
-  1101: "Polygon zkEvm",
-  1442: "Polygon zkEvm Goerli",
+  1101: "Polygon zkEVM",
+  1442: "Polygon zkEVM Goerli",
 };
 
 const coinsMap = {

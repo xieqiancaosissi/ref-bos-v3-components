@@ -6,7 +6,7 @@ const Container = styled.div`
   position: fixed;
   left: 50%;
   /* top: 50%; */
-  z-index: 1;
+  z-index: 0;
   transform: translate(-50%);
 `;
 
@@ -529,7 +529,7 @@ if (!sender) {
     <Widget
       src="guessme.near/widget/ZKEVMSwap.zkevm-connect"
       props={{
-        title: "zkEvm-Ethereum Bridge",
+        title: "zkEVM-Ethereum Bridge",
         src: "https://assets.ref.finance/images/zkevm-bridge.png",
         imgStyle: {
           width: "403px",

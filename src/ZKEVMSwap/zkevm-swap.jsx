@@ -676,7 +676,7 @@ const networksDropDown = Object.keys(networks).map((chainKey) => {
             color: light ? "white" : "",
           }}
         >
-          {network.name}
+          zkEVM
         </div>
 
         <div className="network-dex">{network.dex}</div>
@@ -689,11 +689,11 @@ if (forceNetwork && state.network && forceNetwork !== state.network) {
   return (
     <Theme>
       <SwapMainContainer class="">
-        To proceed, kindly switch to {forceNetwork}.
+        To proceed, kindly switch to zkEVM.
         <Widget
           src="guessme.near/widget/ZKEVMSwap.zkevm-connect"
           props={{
-            title: "zkEvm Swap",
+            title: "zkEVM Swap",
             src: "https://assets.ref.finance/images/zkevm-swap.png",
             imgStyle: {
               width: "528px",
@@ -788,8 +788,8 @@ const onCallTxComple = (tx) => {
 
 if (!state.sender || selectedChainId !== 1101) {
   const title = !state.sender
-    ? "zkEvm Swap"
-    : ` To proceed, kindly switch to ${forceNetwork}.`;
+    ? "zkEVM Swap"
+    : ` To proceed, kindly switch to zkEVM.`;
 
   if (!!state.sender && selectedChainId !== 1101) {
     switchNetwork(1101, "Pancake Swap");
