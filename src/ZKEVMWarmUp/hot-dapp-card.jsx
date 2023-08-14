@@ -65,7 +65,7 @@ return (
     )}
 
     <div className="dapp-detail">
-      <div className="dapp-name">{dappName}</div>
+      <div className="dapp-name">{metadata.name || dappName}</div>
 
       <div className="dapp-creator">@{creator}</div>
     </div>
