@@ -529,7 +529,7 @@ if (!sender) {
     <Widget
       src="guessme.near/widget/ZKEVMSwap.zkevm-connect"
       props={{
-        title: "zkEVM-Ethereum Bridge",
+        title: "Polygon zkEVM-Ethereum Bridge",
         src: "https://assets.ref.finance/images/zkevm-bridge.png",
         imgStyle: {
           width: "403px",
