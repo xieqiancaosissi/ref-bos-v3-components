@@ -84,6 +84,7 @@ const iconMap = {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="trend-card-dapp-name-icon"
     >
       <rect
         width="26"
@@ -128,6 +129,7 @@ const iconMap = {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className="trend-card-dapp-name-icon"
     >
       <rect width="26" height="26" rx="8" fill="url(#pattern0_zkevm_icon)" />
       <defs>
@@ -159,7 +161,7 @@ const iconMap = {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="quest-card-name-icon "
+      className="trend-card-dapp-name-icon"
     >
       <rect width="72" height="72" rx="20" fill="url(#pattern0_aave)" />
       <defs>
@@ -185,7 +187,7 @@ const iconMap = {
   ),
   "Pancake Swap": (
     <img
-      className="quest-card-name-icon "
+      className="trend-card-dapp-name-icon"
       src="https://repository-images.githubusercontent.com/440462673/6872d684-f7ed-463c-9a5c-76542eddbcc4"
     />
   ),
@@ -196,6 +198,7 @@ const iconMap = {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="trend-card-dapp-name-icon"
     >
       <rect
         width="26"
@@ -234,19 +237,19 @@ const iconMap = {
   ),
   "Pancake Swap": (
     <img
-      className="quest-card-name-icon "
+      className="trend-card-dapp-name-icon"
       src="https://repository-images.githubusercontent.com/440462673/6872d684-f7ed-463c-9a5c-76542eddbcc4"
     />
   ),
   QuickSwap: (
     <img
-      className="quest-card-name-icon "
+      className="trend-card-dapp-name-icon"
       src="https://ipfs.near.social/ipfs/bafkreibzpvczmrw2jvua3lsuwmvb7ldlztsszbo4dd6jagfsqkk6ub5opa"
     />
   ),
   Balancer: (
     <img
-      className="quest-card-name-icon "
+      className="trend-card-dapp-name-icon"
       src="https://ipfs.near.social/ipfs/bafkreieg6jpfhxra6c3dspiijg6fj5ga5dpqcn4vmtzdceqa3nheredq5m"
     />
   ),
