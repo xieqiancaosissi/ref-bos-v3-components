@@ -296,7 +296,7 @@ const handleBridge = (props) => {
           action_amount: amount,
           account_id: sender,
           account_info: uuid,
-          template: "ZkEvm-bridge",
+          template: "native bridge",
         });
       }
     });

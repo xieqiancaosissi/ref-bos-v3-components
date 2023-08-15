@@ -775,7 +775,7 @@ const onCallTxComple = (tx) => {
       action_amount: state.inputAssetAmount,
       account_id: state.sender,
       account_info: uuid,
-      template: "ZkEvm",
+      template: selectedDex,
       action_status: status === 1 ? "Success" : "Failed",
       tx_id: transactionHash,
     });
