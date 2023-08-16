@@ -676,7 +676,7 @@ const networksDropDown = Object.keys(networks).map((chainKey) => {
             color: light ? "white" : "",
           }}
         >
-          zkEVM
+          Polygon zkEVM
         </div>
 
         <div className="network-dex">{network.dex}</div>
